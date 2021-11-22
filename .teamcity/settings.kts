@@ -55,8 +55,8 @@ object TestBuilder1 : BuildType({
     }
 
     dependencies {
-        snapshot(TestBuilder3) {
-        }
+        snapshot(TestBuilder3) {}
+        snapshot(TestBuilder2) {}
     }
 })
 
@@ -72,6 +72,24 @@ object TestBuilder3 : BuildType({
             scriptContent = "echo build3"
         }
     }
+    
+    
+})
+
+object TestBuilder2 : BuildType({
+    name = "Test Builder2"
+
+    vcs {
+        root(HttpsGithubComIyankeBigdata)
+    }
+
+    steps {
+        script {
+            scriptContent = "echo build2"
+        }
+    }
+    
+    
 })
 
 object HttpsGithubComIyankeBigdata : GitVcsRoot({
