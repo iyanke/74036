@@ -1,5 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
+import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
 /*
@@ -44,6 +45,12 @@ object TestBuilder1 : BuildType({
     steps {
         script {
             scriptContent = "echo build1"
+        }
+    }
+
+    triggers {
+        vcs {
+            branchFilter = ""
         }
     }
 
