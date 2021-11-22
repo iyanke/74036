@@ -32,6 +32,7 @@ project {
     vcsRoot(HttpsGithubComIyankeBigdata)
 
     buildType(TestBuilder1)
+    buildType(TestBuilder2)
     buildType(TestBuilder3)
 }
 
