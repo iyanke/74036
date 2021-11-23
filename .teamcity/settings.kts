@@ -32,6 +32,7 @@ project {
     vcsRoot(HttpsGithubComIyankeBigdata)
 
     buildType(TestBuilder1)
+    buildType(TestBuilder2)
     buildType(TestBuilder3)
 }
 
@@ -56,8 +57,8 @@ object TestBuilder1 : BuildType({
     }
 
     dependencies {
-        snapshot(TestBuilder3) {
-        }
+        snapshot(TestBuilder3) {        }
+        snapshot(TestBuilder2) {        }
     }
 })
 
@@ -72,6 +73,21 @@ object TestBuilder3 : BuildType({
     steps {
         script {
             scriptContent = "echo build3"
+        }
+    }
+})
+
+object TestBuilder2 : BuildType({
+    name = "Test Builder2"
+
+    vcs {
+        root(HttpsGithubComIyankeBigdata)
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+        script {
+            scriptContent = "echo build2"
         }
     }
 })
