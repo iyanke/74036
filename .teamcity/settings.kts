@@ -32,7 +32,7 @@ project {
     vcsRoot(HttpsGithubComIyankeBigdata)
 
     buildType(TestBuilder1)
-    buildType(TestBuilder2)
+ //   buildType(TestBuilder2)
     buildType(TestBuilder3)
 }
 
@@ -57,7 +57,7 @@ object TestBuilder1 : BuildType({
 
     dependencies {
         snapshot(TestBuilder3) {}
-        snapshot(TestBuilder2) {}
+//        snapshot(TestBuilder2) {}
     }
 })
 
