@@ -32,7 +32,7 @@ project {
     vcsRoot(HttpsGithubComIyankeBigdata)
 
     buildType(TestBuilder1)
-    buildType(TestBuilder2)
+//    buildType(TestBuilder2)
     buildType(TestBuilder3)
 }
 
@@ -58,7 +58,7 @@ object TestBuilder1 : BuildType({
 
     dependencies {
         snapshot(TestBuilder3) {        }
-        snapshot(TestBuilder2) {        }
+ //       snapshot(TestBuilder2) {        }
     }
 })
 
@@ -77,7 +77,7 @@ object TestBuilder3 : BuildType({
     }
 })
 
-object TestBuilder2 : BuildType({
+/*object TestBuilder2 : BuildType({
     name = "Test Builder2"
 
     vcs {
@@ -90,7 +90,7 @@ object TestBuilder2 : BuildType({
             scriptContent = "echo build2"
         }
     }
-})
+})*/
 
 object HttpsGithubComIyankeBigdata : GitVcsRoot({
     name = "https://github.com/iyanke/bigdata"
