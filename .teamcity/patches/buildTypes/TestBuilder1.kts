@@ -19,10 +19,7 @@ changeBuildType(RelativeId("TestBuilder1")) {
     steps {
         update<ScriptBuildStep>(0) {
             clearConditions()
-            scriptContent = """
-                echo build1
-                ping 127.0.0.1 -n 300 > nul
-            """.trimIndent()
+            scriptContent = "ping 127.0.0.1 -n 300 > nul"
         }
     }
 }
